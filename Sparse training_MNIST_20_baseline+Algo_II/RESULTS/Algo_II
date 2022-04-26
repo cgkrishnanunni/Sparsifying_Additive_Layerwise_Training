@@ -1,0 +1,54 @@
+Baseline
+
+test accuracy: 96% accuracy, train_accuracy: 98.4% 
+
+
+
+N2: 20 NEURONS, 0.001 lr, 1000 batch, 100 epoch
+
+Epoch 100/100
+67/67 [==============================] - 0s 4ms/step - loss: 0.0025 - mean_squared_error: 0.0025
+Test Set:  Error: 0.9592
+
+INFO:tensorflow:Assets written to: WEIGHTS/model2/assets
+
+
+N3: 20 NEURONS, 0.001 lr, 1000 batch, 100 epoch
+
+Epoch 100/100
+67/67 [==============================] - 0s 4ms/step - loss: 0.0025 - mean_squared_error: 0.0025
+Test Set:  Error: 0.9592
+
+INFO:tensorflow:Assets written to: WEIGHTS/model3/assets
+
+N4: 20 NEURONS, 0.001 lr, 1000 batch, 200 epoch
+
+
+Epoch 200/200
+67/67 [==============================] - 0s 4ms/step - loss: 0.0023 - mean_squared_error: 0.0023
+Test Set:  Error: 0.9595
+
+INFO:tensorflow:Assets written to: WEIGHTS/model4/assets
+
+N5: 20 NEURONS, 0.001 lr, 1000 batch, 200 epoch
+
+
+Epoch 200/200
+67/67 [==============================] - 0s 4ms/step - loss: 0.0022 - mean_squared_error: 0.0022
+Test Set:  Error: 0.9593
+
+INFO:tensorflow:Assets written to: WEIGHTS/model5/assets
+
+N6: 20 NEURONS, 0.001 lr, 1000 batch, 200 epoch
+
+Epoch 500/500
+67/67 [==============================] - 0s 4ms/step - loss: 0.0019 - mean_squared_error: 0.0019
+Test Set:  Error: 0.9585
+
+INFO:tensorflow:Assets written to: WEIGHTS/model5/assets
+
+
+
+
+
+

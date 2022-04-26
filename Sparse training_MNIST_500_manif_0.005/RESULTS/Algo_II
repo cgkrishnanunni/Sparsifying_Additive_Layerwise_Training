@@ -1,0 +1,50 @@
+N2: 500 NEURONS, 0.0001 lr, 1000 batch, 
+
+Epoch 250/250
+67/67 [==============================] - 0s 5ms/step - loss: 0.0026 - mean_squared_error: 0.0026
+ListWrapper([784, 500, 500, 10])
+Test Set:  Error: 0.986
+
+INFO:tensorflow:Assets written to: WEIGHTS/model2/assets
+Final Model Saved
+
+N3: 500 NEURONS, 0.0001 lr, 1000 batch, 
+
+
+Epoch 250/250
+67/67 [==============================] - 0s 5ms/step - loss: 0.0020 - mean_squared_error: 0.0020
+ListWrapper([784, 500, 500, 10])
+Test Set:  Error: 0.986
+
+INFO:tensorflow:Assets written to: WEIGHTS/model3/assets
+Final Model Saved
+
+N4: 500 NEURONS, 0.0001 lr, 1000 batch, 
+
+Epoch 400/400
+67/67 [==============================] - 0s 5ms/step - loss: 0.0016 - mean_squared_error: 0.0016
+ListWrapper([784, 500, 500, 10])
+Test Set:  Error: 0.986
+
+INFO:tensorflow:Assets written to: WEIGHTS/model4/assets
+Final Model Saved
+
+N5: 500 NEURONS, 0.0001 lr, 1000 batch,
+
+
+Epoch 400/400
+67/67 [==============================] - 0s 5ms/step - loss: 0.0013 - mean_squared_error: 0.0013
+ListWrapper([784, 500, 500, 10])
+Test Set:  Error: 0.987
+
+INFO:tensorflow:Assets written to: WEIGHTS/model5/assets
+Final Model Saved
+
+
+
+
+
+
+
+
+
