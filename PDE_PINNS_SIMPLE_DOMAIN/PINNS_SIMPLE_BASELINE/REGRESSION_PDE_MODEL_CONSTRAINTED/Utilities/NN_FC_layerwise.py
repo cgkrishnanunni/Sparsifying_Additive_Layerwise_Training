@@ -91,7 +91,7 @@ class FCLayerwise(tf.keras.Model):
         for hidden_layer in self.hidden_layers_list:
             #=== Hidden Layers ===#
             prev_output = output
-            output = prev_output + hidden_layer(output)  
+            output =  hidden_layer(output)  
             #output=self.batch_layer(output)
         new_output=output
         #=== Classification ===#

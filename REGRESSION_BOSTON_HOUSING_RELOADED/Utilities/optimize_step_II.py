@@ -62,6 +62,7 @@ def optimize_step(hyperp, hyperp_new,run_options, file_paths, NN, data_loss, acc
     trainable_hidden_layer_index = 2
     relative_number_zeros = 0
     manifold_regul=hyperp_new.manifold
+    #trainable_hidden_layer_index=3
     
     #####################################
     #   Training Current Architecture   #
@@ -116,7 +117,7 @@ def optimize_step(hyperp, hyperp_new,run_options, file_paths, NN, data_loss, acc
             #if trainable_hidden_layer_index==2:
             #if trainable_hidden_layer_index<3:
                 #lrate = 0.001 * math.pow(0.9,(epoch))
-            lrate = 0.001 * math.pow(0.9,(epoch))   
+            lrate = 0.05 * math.pow(1,(epoch))   
             #if trainable_hidden_layer_index>2:
                 #lrate = 0.001 * math.pow(0.9,(epoch))
                 #lrate=np.random.uniform(low=0.0001, high=0.1)
@@ -219,8 +220,8 @@ def optimize_step(hyperp, hyperp_new,run_options, file_paths, NN, data_loss, acc
             print('Previous Layer Relative # of 0s: %.7f\n' %(relative_number_zeros))
             start_time_epoch = time.time()   
             
-            #if mean_accuracy_test.result()<17:
-                #break
+            if mean_accuracy_test.result()<7.7:
+                break
             
             #=== Reset Metrics ===#
             loss_validation = mean_loss_val.result()

@@ -71,16 +71,13 @@ def optimize(hyperp, hyperp_new,run_options, file_paths, NN, data_loss, accuracy
     while trainable_hidden_layer_index < max_hidden_layers: 
         
 
-        
-        if trainable_hidden_layer_index>2:
-            NN.add_layer(trainable_hidden_layer_index, freeze=True, add = True)
         #if trainable_hidden_layer_index>2:
             #hyperp_new.num_epochs=500
             #optimizer = tf.keras.optimizers.Adam(learning_rate=0.0001)
             #hyperp_new.num_epochs=400
         
         if trainable_hidden_layer_index>2:
-            manifold_regul=hyperp_new.manifold * math.pow(0.5,(trainable_hidden_layer_index-2))
+            manifold_regul=0
             #manifold_regul=hyperp_new.manifold 
             #manifold_regul=manifold_regul/2
             #manifold_regul=0
@@ -120,30 +117,15 @@ def optimize(hyperp, hyperp_new,run_options, file_paths, NN, data_loss, accuracy
         print('Beginning Training')
         fr=0
         for epoch in range(hyperp_new.num_epochs):
-            #optimizer = tf.keras.optimizers.Adam(learning_rate=np.random.uniform(low=0.0001, high=0.1))
-            #if trainable_hidden_layer_index==2:
-            #if trainable_hidden_layer_index<3:
-                #lrate = 0.001 * math.pow(0.9,(epoch))
-            #if epoch==0:
-                #lrate=0.001
-            #if epoch>0:
-            if trainable_hidden_layer_index<4:
-                lrate = 0.001 * math.pow(1,(epoch))  
             
-            if trainable_hidden_layer_index>3:
-                lrate = 0.0001 * math.pow(1,(epoch))  
-            #if trainable_hidden_layer_index>2:
-                #lrate = 0.01 * math.pow(1,(epoch)) 
-            #if trainable_hidden_layer_index>2:
-                #lrate = 0.001 * math.pow(0.9,(epoch))
-                #lrate=np.random.uniform(low=0.0001, high=0.1)
-                
-            #if trainable_hidden_layer_index>2:
-                #lrate = 0.001 * math.pow(0.9,(epoch))
-                
-            #if trainable_hidden_layer_index>2:
-                #lrate = 0.001 * math.pow(0.9,(epoch))
-            #optimizer = tf.keras.optimizers.Adam(learning_rate=0.001/(1+epoch))
+            if epoch<=2000:
+
+                lrate = 0.001 
+            
+            if epoch>2000:
+
+                lrate = 0.0005
+
             optimizer = tf.keras.optimizers.Adam(learning_rate=lrate)
             #if trainable_hidden_layer_index==2 and epoch>50:
                 #optimizer = tf.keras.optimizers.Adam(learning_rate=0.0001)
@@ -173,7 +155,7 @@ def optimize(hyperp, hyperp_new,run_options, file_paths, NN, data_loss, accuracy
                     batch_loss_train = data_loss(batch_pred_train, labels, label_dimensions,i_val)
                     
                     
-                    batch_loss_train += sum(NN.losses)+compute_interior_loss(gauss_points_new, batch_labels_train, NN,model_constraint,label_dimensions,hyperp,hyperp_new,data_input_shape,i_val,batch_pred_train,run_options,gauss_weights_new,Coordinates, Stiffness, load,Solution,v)
+                    batch_loss_train += compute_interior_loss(gauss_points_new, batch_labels_train, NN,model_constraint,label_dimensions,hyperp,hyperp_new,data_input_shape,i_val,batch_pred_train,run_options,gauss_weights_new,Coordinates, Stiffness, load,Solution,v)
                     
                     
                     
@@ -186,8 +168,8 @@ def optimize(hyperp, hyperp_new,run_options, file_paths, NN, data_loss, accuracy
                 elapsed_time_batch = time.time() - start_time_batch
                 if batch_num  == 0:
                     print('Time per Batch: %.2f' %(elapsed_time_batch))
-                mean_loss_train(batch_loss_train) 
-                mean_loss_train_constraint(compute_interior_loss(gauss_points_new, batch_labels_train, NN,model_constraint,label_dimensions,hyperp,hyperp_new,data_input_shape,i_val,batch_pred_train,run_options,gauss_weights_new,Coordinates, Stiffness, load,Solution,v))
+                mean_loss_train(data_loss(batch_pred_train, labels, label_dimensions,i_val)) 
+                mean_loss_train_constraint(compute_interior_loss(gauss_points_new, batch_labels_train, NN,model_constraint,label_dimensions,hyperp,hyperp_new,data_input_shape,i_val,batch_pred_train,run_options,gauss_weights_new,Coordinates, Stiffness, load,Solution,v)/model_constraint)
                # mean_accuracy_train(accuracy(batch_pred_train, batch_labels_train))
                 mean_loss_val(manifold_class(batch_data_train,batch_labels_train, NN,manifold_regul,label_dimensions))
                                         
@@ -239,10 +221,14 @@ def optimize(hyperp, hyperp_new,run_options, file_paths, NN, data_loss, accuracy
             print('Validation Set: Loss: %.3e, Accuracy: %.3f' %(mean_loss_val.result(), mean_accuracy_val.result()))
             print('Test Set: Loss: %.3e, Accuracy: %.3f\n' %(mean_loss_test.result(), mean_accuracy_test.result()))
             print('Previous Layer Relative # of 0s: %.7f\n' %(relative_number_zeros))
+            
+            if mean_accuracy_test.result()<0.02:
+                L2_error=error_L2(gauss_points_new, gauss_solution, NN,label_dimensions,hyperp,hyperp_new,data_input_shape,i_val,run_options,gauss_weights_new)
+        
+                print('L2 error: %.3e' %(L2_error))
+            
             start_time_epoch = time.time()   
-            rr=mean_loss_train.result()
-            bb=mean_accuracy_test.result()
-            fr=bb/rr
+
             #if mean_accuracy_test.result()<1.8:
              #   break
             

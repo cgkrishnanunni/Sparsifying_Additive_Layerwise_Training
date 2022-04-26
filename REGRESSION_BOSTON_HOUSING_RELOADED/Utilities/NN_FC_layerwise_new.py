@@ -42,8 +42,8 @@ class FCLayerwise_new(tf.keras.Model):
         print(self.architecture)
 
         #=== Weights and Biases Initializer ===#
-        kernel_initializer = RandomNormal(mean=0.0, stddev=0.0005)
-        bias_initializer = 'zeros'
+        kernel_initializer = RandomNormal(mean=0.0, stddev=0.005, seed=123)
+        bias_initializer = RandomNormal(mean=0.0, stddev=0.005, seed=123)
         
         #=== Linear Upsampling Layer to Map to Feature Space ===#
         l = 1
@@ -59,6 +59,14 @@ class FCLayerwise_new(tf.keras.Model):
                            kernel_initializer = kernel_initializer, bias_initializer = bias_initializer,
                            name = "W" + str(l))
         self.hidden_layers_list.append(dense_layer)
+               #=== Define Hidden Layers ===#
+       # l = 3
+        #dense_layer = Dense(units = self.architecture[l],
+         #                  activation = self.activation, use_bias = True,
+          #                 kernel_initializer = kernel_initializer, bias_initializer = bias_initializer,
+           #                name = "W" + str(l)) 
+        
+      #  self.hidden_layers_list.append(dense_layer)
         
         #=== Classification Layer ===#
         l = 3
