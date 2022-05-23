@@ -1,0 +1,16 @@
+N2: 500 NEURONS, 0.001 lr, 1000 batch, 20 epoch
+
+Epoch 19/20
+67/67 [==============================] - 0s 5ms/step - loss: 0.0015 - mean_squared_error: 0.0015
+Epoch 20/20
+67/67 [==============================] - 0s 5ms/step - loss: 7.0938e-04 - mean_squared_error: 7.0938e-04
+Test Set:  Error: 0.9822
+
+INFO:tensorflow:Assets written to: WEIGHTS/model2/assets
+
+
+
+
+
+
+
