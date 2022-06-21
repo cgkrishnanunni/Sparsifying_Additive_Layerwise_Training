@@ -1,27 +1,14 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
 
 
 import tensorflow as tf
 import numpy as np
 from Utilities.Net import Final_Network
-from Utilities.Net_new import Final_Network_ALGO_II
+
 import random
 
 
-def compute_interior_loss(gauss_points, batch_labels_train,NN,model_constraint,label_dimensions,hyperp,hyperp_new,data_input_shape,i_val,batch_pred_test,run_options,gauss_weights,Coordinates, Stiffness, load,Solution,v):
-        '''
-        compute the weak form loss - problem specific
-        '''
+def compute_interior_loss(gauss_points, batch_labels_train,NN,model_constraint,label_dimensions,hyperp,hyperp_new,data_input_shape,i_val,batch_pred_test,run_options,gauss_weights,Coordinates, Stiffness, load,Solution):
 
-        # break apart input for tracking (to compute gradient)
-        #x = tf.convert_to_tensor(Coordinates[:,0:1])
-        #y = tf.convert_to_tensor(Coordinates[:,1:2])
-
-
-        #batch = tf.stack([x[:,0], y[:,0]], axis=1)
 
             # make prediction
         pred,new = NN(Coordinates)

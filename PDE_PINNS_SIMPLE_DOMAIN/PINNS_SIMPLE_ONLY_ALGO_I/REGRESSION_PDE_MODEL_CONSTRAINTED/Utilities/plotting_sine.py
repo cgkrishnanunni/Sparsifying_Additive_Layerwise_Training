@@ -16,7 +16,7 @@ def plot_solution(hyperp, data, run_options, data_input_shape, label_dimensions,
 
 
     
-    
+    hyperp.max_hidden_layers=i_val 
     
     x = np.linspace(0, 1, 1000)
     y = np.linspace(0, 1, 1000)

@@ -1,0 +1,48 @@
+model_constraint  =  0.3, lr=0.001, 500 epoch, 100 neurons, l1 regul=0.0001, sparsity=0.001
+
+Training Set data: Loss: 6.722e-01, AConstraint: 22.456
+Test Set: Loss L2: 1.419e-01, Test data loss: 1.327
+
+Previous Layer Relative # of 0s: 0.0183168
+
+model_constraint  =  1, lr=0.001, 500 epoch, 100 neurons, l1 regul=0.0001, sparsity=0.001
+
+Training Set data: Loss: 2.645e+00, AConstraint: 10.619
+Test Set: Loss L2: 2.225e-01, Test data loss: 2.136
+
+Previous Layer Relative # of 0s: 0.0356436
+
+
+model_constraint  =  0.7, lr=0.001, 500 epoch, 100 neurons, l1 regul=0.0001, sparsity=0.001
+
+Training Set data: Loss: 1.651e+00, AConstraint: 10.959
+Test Set: Loss L2: 1.384e-01, Test data loss: 1.326
+
+Previous Layer Relative # of 0s: 0.0288119
+
+model_constraint  =  0.5, lr=0.001, 500 epoch, 100 neurons, l1 regul=0.0001, sparsity=0.001
+
+
+Training Set data: Loss: 1.153e+00, AConstraint: 11.698
+Test Set: Loss L2: 1.217e-01, Test data loss: 1.159
+
+Previous Layer Relative # of 0s: 0.0616832
+
+
+model_constraint  =  0.4, lr=0.001, 500 epoch, 100 neurons, l1 regul=0.0001, sparsity=0.001
+
+
+Training Set data: Loss: 9.207e-01, AConstraint: 12.224
+Test Set: Loss L2: 9.655e-02, Test data loss: 0.916
+
+Previous Layer Relative # of 0s: 0.04
+
+
+model_constraint  =  0.45, lr=0.001, 500 epoch, 100 neurons, l1 regul=0.0001, sparsity=0.001
+
+
+Training Set data: Loss: 9.935e-01, AConstraint: 12.010
+Test Set: Loss L2: 1.090e-01, Test data loss: 1.037
+
+Previous Layer Relative # of 0s: 0.0480198
+

@@ -1,23 +1,12 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
 
 
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Oct 23 13:35:17 2019
-
-@author: hwan
-"""
 import tensorflow as tf
 import numpy as np
 import pandas as pd
 import math
 from Utilities.Net import Final_Network
-from Utilities.additive_output import net_output 
-from Utilities.multiplicative_output import net_output_multiply 
+
+
 
 import shutil # for deleting directories
 import os
@@ -28,7 +17,7 @@ import pdb #Equivalent of keyboard in MATLAB, just add "pdb.set_trace()"
 ###############################################################################
 #                             Training Properties                             #
 ###############################################################################
-def optimize(hyperp, hyperp_new,run_options, file_paths, NN, data_loss, accuracy, data_and_labels_train, data_and_labels_val, data_and_labels_test, label_dimensions, num_batches_train,data_and_labels_train_new,manifold_class,batch_size,random_seed,num_data_train,i_val,data_input_shape,data_train,labels_train,multiply,trainable_hidden_layer_index,compute_interior_loss,gauss_points,gauss_weights,error_L2,gauss_solution,gauss_points_new,gauss_weights_new,Coordinates, Stiffness, load,Solution,v):
+def optimize(hyperp, hyperp_new,run_options, file_paths, NN, data_loss, accuracy, data_and_labels_train, data_and_labels_val, data_and_labels_test, label_dimensions, num_batches_train,data_and_labels_train_new,manifold_class,batch_size,random_seed,num_data_train,i_val,data_input_shape,data_train,labels_train,trainable_hidden_layer_index,compute_interior_loss,error_L2,gauss_solution,gauss_points_new,gauss_weights_new,Coordinates, Stiffness, load,Solution):
     
     
 
@@ -169,11 +158,11 @@ def optimize(hyperp, hyperp_new,run_options, file_paths, NN, data_loss, accuracy
                     #=== Display Model Summary ===#
                     if batch_num == 0 and epoch == 0:
                         NN.summary()
-                    y_pred_train_add=net_output(hyperp,hyperp_new,batch_data_train, run_options, data_input_shape, label_dimensions,i_val,batch_pred_train)
+
                     batch_loss_train = data_loss(batch_pred_train, labels, label_dimensions,i_val)
                     
                     
-                    batch_loss_train += sum(NN.losses)+compute_interior_loss(gauss_points_new, batch_labels_train, NN,model_constraint,label_dimensions,hyperp,hyperp_new,data_input_shape,i_val,batch_pred_train,run_options,gauss_weights_new,Coordinates, Stiffness, load,Solution,v)
+                    batch_loss_train += sum(NN.losses)+compute_interior_loss(gauss_points_new, batch_labels_train, NN,model_constraint,label_dimensions,hyperp,hyperp_new,data_input_shape,i_val,batch_pred_train,run_options,gauss_weights_new,Coordinates, Stiffness, load,Solution)
                     
                     
                     
@@ -187,7 +176,7 @@ def optimize(hyperp, hyperp_new,run_options, file_paths, NN, data_loss, accuracy
                 if batch_num  == 0:
                     print('Time per Batch: %.2f' %(elapsed_time_batch))
                 mean_loss_train(batch_loss_train_new_one) 
-                mean_loss_train_constraint(compute_interior_loss(gauss_points_new, batch_labels_train, NN,model_constraint,label_dimensions,hyperp,hyperp_new,data_input_shape,i_val,batch_pred_train,run_options,gauss_weights_new,Coordinates, Stiffness, load,Solution,v))
+                mean_loss_train_constraint(compute_interior_loss(gauss_points_new, batch_labels_train, NN,model_constraint,label_dimensions,hyperp,hyperp_new,data_input_shape,i_val,batch_pred_train,run_options,gauss_weights_new,Coordinates, Stiffness, load,Solution))
                # mean_accuracy_train(accuracy(batch_pred_train, batch_labels_train))
                 mean_loss_val(manifold_class(batch_data_train,batch_labels_train, NN,manifold_regul,label_dimensions))
                                         
@@ -197,16 +186,12 @@ def optimize(hyperp, hyperp_new,run_options, file_paths, NN, data_loss, accuracy
             for batch_data_test, batch_labels_test in data_and_labels_test:
                 batch_pred_test,val = NN(batch_data_test)
                 
-                if multiply==1:
-                    y_pred_test_add=net_output_multiply(hyperp,hyperp_new,batch_data_test, run_options, data_input_shape, label_dimensions,i_val,batch_pred_test)
-        
-                    batch_pred_test=np.multiply(batch_pred_test,y_pred_test_add)   
+
                     #batch_pred_test=batch_pred_test
-                if multiply==0:
-                    
-                    y_pred_test_add=net_output(hyperp,hyperp_new,batch_data_test, run_options, data_input_shape, label_dimensions,i_val,batch_pred_test)
+
+
         
-                    batch_pred_test=batch_pred_test+y_pred_test_add
+                batch_pred_test=batch_pred_test
             
                 mean_accuracy_test(accuracy(batch_pred_test, batch_labels_test,label_dimensions))
                 
@@ -280,17 +265,11 @@ def optimize(hyperp, hyperp_new,run_options, file_paths, NN, data_loss, accuracy
         
         print('L2 error: %.3e' %(L2_error))
         
-        #=== Saving Relative Number of Zero Elements ===#
-            #relative_number_zeros_dict = {}
-            #relative_number_zeros_dict['rel_zeros'] = storage_array_relative_number_zeros
-            #df_relative_number_zeros = pd.DataFrame(relative_number_zeros_dict)
-            #df_relative_number_zeros.to_csv(file_paths.NN_savefile_name + "_relzeros" + '.csv', index=False)
+
        
         #=== Add Layer ===#
         trainable_hidden_layer_index += 1
-        #if trainable_hidden_layer_index < hyperp_new.max_hidden_layers and i_val==1:
-         
-            #NN.add_layer(trainable_hidden_layer_index, freeze=True, add = True)
+
 
             
         #=== Preparing for Next Training Cycle ===#
@@ -298,18 +277,5 @@ def optimize(hyperp, hyperp_new,run_options, file_paths, NN, data_loss, accuracy
         storage_array_accuracy = []
         reset_optimizer   
         
-    ########################
-    #   Save Final Model   #
-    ########################            
-    #=== Saving Trained Model ===#     
-    
-    #if not os.path.exists("WEIGHTS"):
-     #   os.makedirs("WEIGHTS")
-    #NN.save_weights("WEIGHTS"+'/'+"model_weights"+str(i_val)+'.h5')
-    #NN.save("WEIGHTS"+'/'+"model"+str(i_val))
 
-    #print('Final Model Saved') 
-        
-
-    
 

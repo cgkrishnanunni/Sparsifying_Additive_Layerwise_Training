@@ -1,0 +1,109 @@
+N2: 20 NEURONS, 0.001 lr, 1000 batch, 100 epoch
+
+Epoch 100/100
+60000/60000 [==============================] - 0s 6us/sample - loss: 0.0117 - mean_squared_error: 0.0117
+ListWrapper([784, 20, 20, 10])
+Test Set:  Error: 0.946
+
+
+N3: 20 NEURONS, 0.001 lr, 1000 batch, 100 epoch
+
+Epoch 99/100
+60000/60000 [==============================] - 0s 5us/sample - loss: 0.0101 - mean_squared_error: 0.0101
+Epoch 100/100
+60000/60000 [==============================] - 0s 6us/sample - loss: 0.0101 - mean_squared_error: 0.0101
+ListWrapper([784, 20, 20, 10])
+Test Set:  Error: 0.955
+
+
+N4 : 20 NEURONS, 0.001 lr, 1000 batch, 200 epoch
+
+Epoch 200/200
+60000/60000 [==============================] - 0s 5us/sample - loss: 0.0090 - mean_squared_error: 0.0090
+ListWrapper([784, 20, 20, 10])
+Test Set:  Error: 0.959
+
+N5: 20 NEURONS, 0.001 lr, 1000 batch, 200 epoch
+
+
+Epoch 199/200
+60000/60000 [==============================] - 0s 6us/sample - loss: 0.0081 - mean_squared_error: 0.0081
+Epoch 200/200
+60000/60000 [==============================] - 0s 6us/sample - loss: 0.0081 - mean_squared_error: 0.0081
+ListWrapper([784, 20, 20, 10])
+Test Set:  Error: 0.963
+
+N6: 20 NEURONS, 0.001 lr, 1000 batch, 200 epoch
+
+Epoch 199/200
+60000/60000 [==============================] - 0s 6us/sample - loss: 0.0074 - mean_squared_error: 0.0074
+Epoch 200/200
+60000/60000 [==============================] - 0s 6us/sample - loss: 0.0074 - mean_squared_error: 0.0074
+ListWrapper([784, 20, 20, 10])
+Test Set:  Error: 0.964
+
+N7: 20 NEURONS, 0.001 lr, 1000 batch, 200 epoch
+
+Epoch 199/200
+60000/60000 [==============================] - 0s 5us/sample - loss: 0.0070 - mean_squared_error: 0.0070
+Epoch 200/200
+60000/60000 [==============================] - 0s 4us/sample - loss: 0.0070 - mean_squared_error: 0.0070
+ListWrapper([784, 20, 20, 10])
+Test Set:  Error: 0.966
+
+N8: 20 NEURONS, 0.001 lr, 1000 batch, 200 epoch
+
+Epoch 199/200
+60000/60000 [==============================] - 0s 7us/sample - loss: 0.0067 - mean_squared_error: 0.0067
+Epoch 200/200
+60000/60000 [==============================] - 0s 7us/sample - loss: 0.0067 - mean_squared_error: 0.0067
+ListWrapper([784, 20, 20, 10])
+Test Set:  Error: 0.967
+
+N9: 20 NEURONS, 0.001 lr, 1000 batch, 300 epoch
+
+60000/60000 [==============================] - 0s 8us/sample - loss: 0.0062 - mean_squared_error: 0.0062
+ListWrapper([784, 20, 20, 10])
+Test Set:  Error: 0.967
+
+N10: 20 NEURONS, 0.001 lr, 1000 batch, 200 epoch
+
+Epoch 199/200
+60000/60000 [==============================] - 0s 5us/sample - loss: 0.0060 - mean_squared_error: 0.0060
+Epoch 200/200
+60000/60000 [==============================] - 0s 6us/sample - loss: 0.0060 - mean_squared_error: 0.0060
+ListWrapper([784, 20, 20, 10])
+Test Set:  Error: 0.967
+
+N11: 20 NEURONS, 0.001 lr, 1000 batch, 200 epoch
+
+
+Epoch 238/300
+60000/60000 [==============================] - 0s 6us/sample - loss: 0.0058 - mean_squared_error: 0.0058
+show more (open the raw output data in a text editor) ...
+
+Test Set:  Error: 0.968
+
+N12: 20 NEURONS, 0.001 lr, 1000 batch, 200 epoch
+
+Epoch 199/200
+60000/60000 [==============================] - 0s 6us/sample - loss: 0.0055 - mean_squared_error: 0.0055
+Epoch 200/200
+60000/60000 [==============================] - 0s 7us/sample - loss: 0.0055 - mean_squared_error: 0.0055
+ListWrapper([784, 20, 20, 10])
+Test Set:  Error: 0.968
+
+N13: 20 NEURONS, 0.001 lr, 1000 batch, 200 epoch
+
+Epoch 200/200
+60000/60000 [==============================] - 0s 6us/sample - loss: 0.0053 - mean_squared_error: 0.0053
+ListWrapper([784, 20, 20, 10])
+Test Set:  Error: 0.969
+
+N14: 20 NEURONS, 0.001 lr, 1000 batch, 300 epoch
+
+Epoch 238/300
+60000/60000 [==============================] - 0s 5us/sample - loss: 0.0051 - mean_squared_error: 0.0051
+Epoch 239/300
+60000/60000 [==============================] - 0s 6us/sample - loss: 0.0051 - mean_squared_error: 0.0051
+Epoch 240/300
