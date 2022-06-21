@@ -62,23 +62,7 @@ class FCLayerwise(tf.keras.Model):
                            name = "W" + str(l))
         
         self.hidden_layers_list.append((dense_layer))
-        #self.hidden_layers_list=dense_layer
-        #self.hidden_layers_list.insert(0, dense_layer)
-        #self.hidden_layers_list=NoDependency(self.hidden_layers_list)
-        #=== Classification Layer ===#
-        l = 3
-        
-        #new_kernal_regularizer=0.000
-        #new_bias_regularizer=0.000
-        #kernel_rr = tf.keras.regularizers.l1(new_kernal_regularizer)
-        #bias_rr = tf.keras.regularizers.l1(new_bias_regularizer)
-        
-        #self.classification_layer_new = Dense(units = 13,
-                                          #activation = self.activation, use_bias = True,                               
-                                         #name = 'classification_layer_new')
-                
-        #self.batch_layer = BatchNormalization(name = 'batch_layer')
-        #self.drop=Dropout(0.2)
+
         
         self.classification_layer = Dense(units = output_dimensions,
                                           activation = hyperp.classification_act, use_bias = True,                               
@@ -90,13 +74,12 @@ class FCLayerwise(tf.keras.Model):
     def call(self, inputs):
         #=== Upsampling ===#
         output = self.upsampling_layer(inputs)  
-        #output=self.drop(output)
-        #output=self.batch_layer(output)
+
         for hidden_layer in self.hidden_layers_list:
             #=== Hidden Layers ===#
             prev_output = output
             output =  hidden_layer(output)  
-            #output=self.batch_layer(output)
+    
         new_output=output
         #=== Classification ===#
        # output = self.classification_layer_new(output)
@@ -108,15 +91,13 @@ class FCLayerwise(tf.keras.Model):
 #                                 Add Layer                                   #
 ###############################################################################     
     def add_layer(self, trainable_hidden_layer_index, freeze=True ,add = True):
-        #kernel_initializer = RandomNormal(mean=0.0, stddev=0.005)
+
         kernel_initializer = RandomNormal(mean=0.0, stddev=0.005)
         bias_initializer = RandomNormal(mean=0.0, stddev=0.005)
+        
         new_kernal_regularizer=self.regularization_value * math.pow(1,(trainable_hidden_layer_index-2))
         new_bias_regularizer=self.regularization_value * math.pow(1,(trainable_hidden_layer_index-2))
-        #new_kernal_regularizer=self.regularization_value/(1+np.exp(trainable_hidden_layer_index-2))
-        #new_bias_regularizer=self.regularization_value/(1+np.exp(trainable_hidden_layer_index-2))
-        #new_kernal_regularizer=self.regularization_value*(1+(trainable_hidden_layer_index-2)/10)
-        #new_bias_regularizer=self.regularization_value*(1+(trainable_hidden_layer_index-2)/10)
+
         kernel_r = tf.keras.regularizers.l1(new_kernal_regularizer)
         bias_r = tf.keras.regularizers.l1(new_bias_regularizer)
         
@@ -126,13 +107,12 @@ class FCLayerwise(tf.keras.Model):
                                 kernel_initializer = kernel_initializer, bias_initializer = bias_initializer,
                                 kernel_regularizer = kernel_r, bias_regularizer =  bias_r ,
                                 name = "W" + str(trainable_hidden_layer_index))
-            #self.hidden_layers_list.append(dense_layer)
+
             if len(self.hidden_layers_list)==trainable_hidden_layer_index-1:
                 del self.hidden_layers_list[trainable_hidden_layer_index-2]
             
             self.hidden_layers_list.append((dense_layer))
-            #self.hidden_layers_list.insert(trainable_hidden_layer_index-2, dense_layer)
-            #self.hidden_layers_list=NoDependency(self.hidden_layers_list)
+
         if freeze:
             self.upsampling_layer.trainable = False
             #self.classification_layer.trainable = False

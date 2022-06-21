@@ -1,15 +1,11 @@
-#!/usr/bin/env python
-# coding: utf-8
 
-# In[ ]:
 
 
 import tensorflow as tf
 import numpy as np
-from Utilities.Net import Final_Network
-from Utilities.Net_new import Final_Network_ALGO_II
 
-def error_L2(gauss_points, gauss_solution,NN,label_dimensions,hyperp,hyperp_new,data_input_shape,i_val,run_options,gauss_weights):
+
+def error_L2(gauss_points, gauss_solution,NN,label_dimensions,hyperp,data_input_shape,i_val,run_options,gauss_weights):
 
 
 
@@ -23,46 +19,8 @@ def error_L2(gauss_points, gauss_solution,NN,label_dimensions,hyperp,hyperp_new,
         batch = tf.stack([x[:,0], y[:,0]], axis=1)
 
             # make prediction
-        pred,new = NN(batch)
-            
-        y_pred_train_add=0*pred
-        if i_val>1:
-            for i_net in range(2,i_val+1):
-                
-                if i_net==2:    
-                    Network=Final_Network( hyperp,run_options, data_input_shape, label_dimensions) 
-                #NNN._set_inputs( data)
-            #Network.load_weights("WEIGHTS"+'/'+"model_weights"+str(j-1)+'.hdf5').expect_partial()
-                #NNN.save("WEIGHTS"+'/'+"model"+str(i_net-1))
-                #Network.load_weights("WEIGHTS"+'/'+"model_weights"+str(i_net-1)+'.hdf5').expect_partial()
-                #Network=tf.keras.models.load_model("WEIGHTS"+'/'+"model"+str(i_net-1))
-                    Network.load_weights("WEIGHTS"+'/'+"model_weights"+str(i_net-1)).expect_partial()
-                
-                    y_pred_train_add=Network(batch)
-        
-                if i_net>2:
-                
-                    Network=Final_Network_ALGO_II( hyperp_new,run_options, data_input_shape, label_dimensions) 
-                #NNN._set_inputs( data)
-            #Network.load_weights("WEIGHTS"+'/'+"model_weights"+str(j-1)+'.hdf5').expect_partial()
-                #NNN.save("WEIGHTS"+'/'+"model"+str(i_net-1))
-                    Network.load_weights("WEIGHTS"+'/'+"model_weights"+str(i_net-1)).expect_partial()
-                #Network=tf.keras.models.load_model("WEIGHTS"+'/'+"model"+str(i_net-1))
-                #Network.load_weights("WEIGHTS"+'/'+"model_weights"+str(i_net-1)).expect_partial()
-                
-                    y_pred_train_add=y_pred_train_add+Network(batch)
-                
-                   
-            
-            
-            
-            
-            
-        pred=pred+y_pred_train_add
-
-
-
-
+        pred = NN(batch)
+           
 
         
         shape_solu=np.shape(pred)

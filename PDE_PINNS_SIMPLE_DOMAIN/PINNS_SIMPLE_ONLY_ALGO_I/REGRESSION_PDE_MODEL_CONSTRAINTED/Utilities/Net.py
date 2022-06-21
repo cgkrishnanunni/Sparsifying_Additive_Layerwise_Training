@@ -45,7 +45,7 @@ class Final_Network(tf.keras.Model):
                                       name = 'upsampling_layer')
         
         #=== Define Hidden Layers ===#
-        for l in range(2,hyperp.max_hidden_layers):
+        for l in range(2,hyperp.max_hidden_layers+1):
             dense_layer = Dense(units = self.num_hidden_nodes,
                            activation = self.activation, use_bias = True,
                            name = "W" + str(l))
@@ -80,7 +80,7 @@ class Final_Network(tf.keras.Model):
         #=== Classification ===#
         #output=self.classification_layer_new(output)
         output = self.classification_layer(output)
-        return output
+        return output, output
     
 ###############################################################################
 #                                 Add Layer                                   #

@@ -5,60 +5,75 @@ import numpy as np
 import pandas as pd
 import pdb #Equivalent of keyboard in MATLAB, just add "pdb.set_trace()"
 from Utilities.Net import Final_Network
-from Utilities.Net_new import Final_Network_ALGO_II
 import matplotlib.pyplot as plt
+from matplotlib import cm
+import matplotlib.pyplot as plt
+import os
 
-# In[ ]:
 
 
-def plot_sine(hyperp,hyperp_new, data, run_options, data_input_shape, label_dimensions,i_val,X_train, Y_train,labels_test):
+def plot_solution(hyperp, data, run_options, data_input_shape, label_dimensions,i_val,X_train, Y_train,labels_test):
 
-    i_val=i_val+1
+
     
+    hyperp.max_hidden_layers=i_val+1
     
-    if i_val>1:
-        for i_net in range(2,i_val+1):
-                
-            if i_net==2:    
-                Network=Final_Network( hyperp,run_options, data_input_shape, label_dimensions) 
+    x = np.linspace(0, 1, 1000)
+    y = np.linspace(0, 1, 1000)
+    X, Y = np.meshgrid(x, y)
+
+    d = []
+    for i in range(0,1000):
+        for j in range(0,1000):
+            dd=[X[i,j],Y[i,j]]
+            d.append(dd) 
+
+    d=np.array(d)
+    data= tf.cast(d,tf.float32)
+  
+    Network=Final_Network( hyperp,run_options, data_input_shape, label_dimensions) 
         
-                Network.load_weights("WEIGHTS"+'/'+"model_weights"+str(i_net-1)).expect_partial()
+    Network.load_weights("WEIGHTS"+'/'+"model_weights"+str(1)+str(i_val)).expect_partial()
     
-                y_pred_test_add=Network(data)
+    y_pred_test_add, r=Network(data)
         
-            if i_net>2:
-                
-                Network=Final_Network_ALGO_II( hyperp_new,run_options, data_input_shape, label_dimensions) 
-        
-                Network.load_weights("WEIGHTS"+'/'+"model_weights"+str(i_net-1)).expect_partial()
-    
-                y_pred_test_add=y_pred_test_add+Network(data)
+         
         
     fig_loss = plt.figure()
-        
-    #plt.plot(data, y_pred_test_add, 'ko')
+    
+    
+    
+    
    
 
-    shape=np.shape(y_pred_test_add)
-    labels_test=tf.reshape(labels_test,shape)
+        
+      
+    Z=tf.reshape(y_pred_test_add,np.shape(X))
+#clevels = np.linspace(0.0019333754, 14.727704, 10000)
+    levels=np.linspace(-1.6, 15, 100)
+    cs=plt.contourf(X, Y, Z,levels, cmap=cm.jet,vmax=15, vmin=-1.6)     
+#plt.contourf(X, Y, Z, 1000, cmap='RdYlBu_r', vmax=14.727704, vmin=0.) 
+    plt.colorbar() 
 
-        
-    x = data[:,0]
-    y = data[:,1]
-        
-    fig, ax = plt.subplots()
-    clevels = np.linspace(np.amin(y_pred_test_add), np.amax(y_pred_test_add), 10000)
-    im = ax.tricontourf(x, y, y_pred_test_add[:,0], clevels, cmap='RdYlBu_r')
-    plt.colorbar(im)
+    for c in cs.collections:
+        c.set_rasterized(True)
+    
+    
+    
+    
+    
+    
+    
+    
+
     plt.show()
 
 
 
-    #plt.title('Predictions After Training Neural network {}'.format(i_val-1))
-    #plt.xlabel('x')
-    #plt.ylabel('y=sin(x)')
-    #plt.legend(['Predicted','True'])
+    if not os.path.exists("plots"):
+        os.makedirs("plots")
+        
 
-    fig_loss.savefig("plots"+'/'+"AlgoII"+str(i_val-1)+'.png')
+    fig_loss.savefig("plots"+str(i_val)+'.png')
     
     

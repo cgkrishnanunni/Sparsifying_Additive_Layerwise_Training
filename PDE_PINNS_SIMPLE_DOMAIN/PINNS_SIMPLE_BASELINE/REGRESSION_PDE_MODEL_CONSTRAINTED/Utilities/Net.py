@@ -1,7 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
 
 
 import tensorflow as tf
@@ -22,9 +18,7 @@ class Final_Network(tf.keras.Model):
         self.num_hidden_nodes = hyperp.num_hidden_nodes
         self.architecture = [] # storage for layer information, each entry is [filter_size, num_filters]
         self.activation = hyperp.activation
-        #self.regularization_value=hyperp.regularization
-        #self.kernel_regularizer = kernel_regularizer
-        #self.bias_regularizer = bias_regularizer
+
         self.hidden_layers_list = [] # This will be a list of Keras layers
 
         #=== Define Initial Architecture and Create Layer Storage ===#
@@ -54,15 +48,7 @@ class Final_Network(tf.keras.Model):
         #=== Classification Layer ===#
         l = 3
         
-        #new_kernal_regularizer=0.000
-        #new_bias_regularizer=0.000
-        #kernel_rr = tf.keras.regularizers.l1(new_kernal_regularizer)
-        #bias_rr = tf.keras.regularizers.l1(new_bias_regularizer)
-        
-        #self.classification_layer_new = Dense(units = 13,
-                                          #activation = self.activation, use_bias = True,                               
-                                         #name = 'classification_layer_new')
-       
+
         self.classification_layer = Dense(units = output_dimensions,
                                           activation = hyperp.classification_act, use_bias = True,name = 'classification_layer')
         
@@ -75,16 +61,14 @@ class Final_Network(tf.keras.Model):
         for hidden_layer in self.hidden_layers_list:
             #=== Hidden Layers ===#
             prev_output = output
-            output = prev_output + hidden_layer(output)  
+            output = hidden_layer(output)  
         
         #=== Classification ===#
         #output=self.classification_layer_new(output)
         output = self.classification_layer(output)
         return output
     
-###############################################################################
-#                                 Add Layer                                   #
-###############################################################################     
+   
     
     
     
