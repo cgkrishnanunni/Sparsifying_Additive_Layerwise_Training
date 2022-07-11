@@ -1,0 +1,52 @@
+Algo II
+
+5 neurons, stopping criteria: loss<0.42, 1 hidden layer, elu activation, lr=0.01, RandomNormal(mean=0.0, stddev=0.05,seed=123)
+
+================================
+            Epoch 348            
+================================
+Abalone_FC_L1_mhl9_hl20_rpt001_nTOL4_eTOL4_b1000_e100
+Trainable Hidden Layer Index: 2
+GPU: 1
+
+Optimizing 10 batches of size 100:
+Time per Batch: 0.06
+ListWrapper([10, 20, 20, 12])
+Time per Epoch: 0.52
+
+Training Set: Loss: 3.742e-01, Accuracy: 0.000
+Validation Set: Loss: 0.000e+00, Accuracy: 0.000
+Test Set: Loss: 0.000e+00, Accuracy: 0.419
+
+Previous Layer Relative # of 0s: 0.0000000
+
+================================
+     Extending Architecture     
+================================
+
+
+5 neurons, stopping criteria: loss<0.40, 1 hidden layer, elu activation, lr=0.01, RandomNormal(mean=0.0, stddev=0.05,seed=123)
+
+
+================================
+            Epoch 251            
+================================
+Abalone_FC_L1_mhl9_hl20_rpt001_nTOL4_eTOL4_b1000_e100
+Trainable Hidden Layer Index: 2
+GPU: 1
+
+Optimizing 10 batches of size 100:
+Time per Batch: 0.06
+ListWrapper([10, 20, 20, 12])
+ListWrapper([10, 5, 5, 12])
+Time per Epoch: 0.53
+
+Training Set: Loss: 3.377e-01, Accuracy: 0.000
+Validation Set: Loss: 0.000e+00, Accuracy: 0.000
+Test Set: Loss: 0.000e+00, Accuracy: 0.381
+
+Previous Layer Relative # of 0s: 0.0000000
+
+================================
+     Extending Architecture     
+================================

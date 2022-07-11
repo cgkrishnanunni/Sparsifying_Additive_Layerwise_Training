@@ -1,0 +1,387 @@
+================================
+            Epoch 398            
+================================
+Abalone_FC_L1_mhl15_hl100_rpt0001_nTOL4_eTOL4_b50_e400
+Trainable Hidden Layer Index: 2
+GPU: 1
+
+Optimizing 1 batches of size 50:
+Time per Batch: 0.88
+Time per Epoch: 0.98
+
+Training Set: Loss: 6.146e-01, Accuracy: 0.000
+Validation Set: Loss: 0.000e+00, Accuracy: 0.828
+Test Set: Loss: 0.000e+00, Accuracy: 0.751
+
+Previous Layer Relative # of 0s: 0.0000000
+
+
+================================
+            Epoch 399            
+================================
+Abalone_FC_L1_mhl15_hl100_rpt0001_nTOL4_eTOL4_b50_e400
+Trainable Hidden Layer Index: 2
+GPU: 1
+
+Optimizing 1 batches of size 50:
+Time per Batch: 0.99
+Time per Epoch: 1.09
+
+Training Set: Loss: 6.118e-01, Accuracy: 0.000
+Validation Set: Loss: 0.000e+00, Accuracy: 0.788
+Test Set: Loss: 0.000e+00, Accuracy: 0.759
+
+Previous Layer Relative # of 0s: 0.0000000
+
+================================
+     Extending Architecture     
+================================
+Previous Layer Relative # of 0s: 0.0222772
+
+================================
+            Epoch 398            
+================================
+Abalone_FC_L1_mhl15_hl100_rpt0001_nTOL4_eTOL4_b50_e400
+Trainable Hidden Layer Index: 3
+GPU: 1
+
+Optimizing 1 batches of size 50:
+Time per Batch: 1.09
+Time per Epoch: 1.20
+
+Training Set: Loss: 4.269e-01, Accuracy: 0.000
+Validation Set: Loss: 0.000e+00, Accuracy: 0.648
+Test Set: Loss: 0.000e+00, Accuracy: 0.581
+
+Previous Layer Relative # of 0s: 0.0222772
+
+
+
+================================
+            Epoch 399            
+================================
+Abalone_FC_L1_mhl15_hl100_rpt0001_nTOL4_eTOL4_b50_e400
+Trainable Hidden Layer Index: 3
+GPU: 1
+
+Optimizing 1 batches of size 50:
+Time per Batch: 1.05
+Time per Epoch: 1.16
+
+Training Set: Loss: 4.295e-01, Accuracy: 0.000
+Validation Set: Loss: 0.000e+00, Accuracy: 0.644
+Test Set: Loss: 0.000e+00, Accuracy: 0.604
+
+Previous Layer Relative # of 0s: 0.0222772
+
+================================
+     Extending Architecture     
+================================
+Previous Layer Relative # of 0s: 0.1516832
+
+
+================================
+            Epoch 398            
+================================
+Abalone_FC_L1_mhl15_hl100_rpt0001_nTOL4_eTOL4_b50_e400
+Trainable Hidden Layer Index: 4
+GPU: 1
+
+Optimizing 1 batches of size 50:
+Time per Batch: 1.24
+Time per Epoch: 1.36
+
+Training Set: Loss: 3.755e-01, Accuracy: 0.000
+Validation Set: Loss: 0.000e+00, Accuracy: 0.620
+Test Set: Loss: 0.000e+00, Accuracy: 0.541
+
+Previous Layer Relative # of 0s: 0.1516832
+
+
+
+================================
+            Epoch 399            
+================================
+Abalone_FC_L1_mhl15_hl100_rpt0001_nTOL4_eTOL4_b50_e400
+Trainable Hidden Layer Index: 4
+GPU: 1
+
+Optimizing 1 batches of size 50:
+Time per Batch: 1.24
+Time per Epoch: 1.37
+
+Training Set: Loss: 3.739e-01, Accuracy: 0.000
+Validation Set: Loss: 0.000e+00, Accuracy: 0.636
+Test Set: Loss: 0.000e+00, Accuracy: 0.573
+
+Previous Layer Relative # of 0s: 0.1516832
+
+================================
+     Extending Architecture     
+================================
+Previous Layer Relative # of 0s: 0.5959406
+
+
+================================
+            Epoch 398            
+================================
+Abalone_FC_L1_mhl15_hl100_rpt0001_nTOL4_eTOL4_b50_e400
+Trainable Hidden Layer Index: 5
+GPU: 1
+
+Optimizing 1 batches of size 50:
+Time per Batch: 1.42
+Time per Epoch: 1.56
+
+Training Set: Loss: 3.543e-01, Accuracy: 0.000
+Validation Set: Loss: 0.000e+00, Accuracy: 0.604
+Test Set: Loss: 0.000e+00, Accuracy: 0.518
+
+Previous Layer Relative # of 0s: 0.5959406
+
+
+
+================================
+            Epoch 399            
+================================
+Abalone_FC_L1_mhl15_hl100_rpt0001_nTOL4_eTOL4_b50_e400
+Trainable Hidden Layer Index: 5
+GPU: 1
+
+Optimizing 1 batches of size 50:
+Time per Batch: 1.42
+Time per Epoch: 1.56
+
+Training Set: Loss: 3.525e-01, Accuracy: 0.000
+Validation Set: Loss: 0.000e+00, Accuracy: 0.618
+Test Set: Loss: 0.000e+00, Accuracy: 0.551
+
+Previous Layer Relative # of 0s: 0.5959406
+
+================================
+     Extending Architecture     
+================================
+Previous Layer Relative # of 0s: 0.6381188
+
+
+================================
+            Epoch 398            
+================================
+Abalone_FC_L1_mhl15_hl100_rpt0001_nTOL4_eTOL4_b50_e400
+Trainable Hidden Layer Index: 6
+GPU: 1
+
+Optimizing 1 batches of size 50:
+Time per Batch: 1.63
+
+Time per Epoch: 1.85
+
+Training Set: Loss: 3.237e-01, Accuracy: 0.000
+Validation Set: Loss: 0.000e+00, Accuracy: 0.553
+Test Set: Loss: 0.000e+00, Accuracy: 0.485
+
+Previous Layer Relative # of 0s: 0.6381188
+
+
+
+================================
+            Epoch 399            
+================================
+Abalone_FC_L1_mhl15_hl100_rpt0001_nTOL4_eTOL4_b50_e400
+Trainable Hidden Layer Index: 6
+GPU: 1
+
+Optimizing 1 batches of size 50:
+Time per Batch: 1.61
+Time per Epoch: 1.77
+
+Training Set: Loss: 3.225e-01, Accuracy: 0.000
+Validation Set: Loss: 0.000e+00, Accuracy: 0.559
+Test Set: Loss: 0.000e+00, Accuracy: 0.513
+
+Previous Layer Relative # of 0s: 0.6381188
+
+================================
+     Extending Architecture     
+================================
+Previous Layer Relative # of 0s: 0.6803960
+
+
+
+===============================
+            Epoch 398            
+================================
+Abalone_FC_L1_mhl15_hl100_rpt0001_nTOL4_eTOL4_b50_e400
+Trainable Hidden Layer Index: 7
+GPU: 1
+
+Optimizing 1 batches of size 50:
+Time per Batch: 1.83
+Time per Epoch: 2.01
+
+Training Set: Loss: 3.008e-01, Accuracy: 0.000
+Validation Set: Loss: 0.000e+00, Accuracy: 0.519
+Test Set: Loss: 0.000e+00, Accuracy: 0.454
+
+Previous Layer Relative # of 0s: 0.6803960
+
+
+
+================================
+            Epoch 399            
+================================
+Abalone_FC_L1_mhl15_hl100_rpt0001_nTOL4_eTOL4_b50_e400
+Trainable Hidden Layer Index: 7
+GPU: 1
+
+Optimizing 1 batches of size 50:
+Time per Batch: 1.82
+Time per Epoch: 2.00
+
+Training Set: Loss: 2.994e-01, Accuracy: 0.000
+Validation Set: Loss: 0.000e+00, Accuracy: 0.522
+Test Set: Loss: 0.000e+00, Accuracy: 0.479
+
+Previous Layer Relative # of 0s: 0.6803960
+
+================================
+     Extending Architecture     
+================================
+Previous Layer Relative # of 0s: 0.6951485
+
+
+================================
+            Epoch 398            
+================================
+Abalone_FC_L1_mhl15_hl100_rpt0001_nTOL4_eTOL4_b50_e400
+Trainable Hidden Layer Index: 8
+GPU: 1
+
+Optimizing 1 batches of size 50:
+Time per Batch: 1.97
+Time per Epoch: 2.17
+
+Training Set: Loss: 2.866e-01, Accuracy: 0.000
+Validation Set: Loss: 0.000e+00, Accuracy: 0.497
+Test Set: Loss: 0.000e+00, Accuracy: 0.435
+
+Previous Layer Relative # of 0s: 0.6951485
+
+================================
+            Epoch 399            
+================================
+Abalone_FC_L1_mhl15_hl100_rpt0001_nTOL4_eTOL4_b50_e400
+Trainable Hidden Layer Index: 8
+GPU: 1
+
+Optimizing 1 batches of size 50:
+Time per Batch: 1.97
+Time per Epoch: 2.17
+
+Training Set: Loss: 2.861e-01, Accuracy: 0.000
+Validation Set: Loss: 0.000e+00, Accuracy: 0.493
+Test Set: Loss: 0.000e+00, Accuracy: 0.452
+
+Previous Layer Relative # of 0s: 0.6951485
+
+================================
+     Extending Architecture     
+================================
+Previous Layer Relative # of 0s: 0.6588119
+
+================================
+            Epoch 398            
+================================
+Abalone_FC_L1_mhl15_hl100_rpt0001_nTOL4_eTOL4_b50_e400
+Trainable Hidden Layer Index: 9
+GPU: 1
+
+Optimizing 1 batches of size 50:
+Time per Batch: 2.15
+Time per Epoch: 2.37
+
+Training Set: Loss: 2.863e-01, Accuracy: 0.000
+Validation Set: Loss: 0.000e+00, Accuracy: 0.494
+Test Set: Loss: 0.000e+00, Accuracy: 0.433
+
+Previous Layer Relative # of 0s: 0.6588119
+================================
+            Epoch 399            
+================================
+Abalone_FC_L1_mhl15_hl100_rpt0001_nTOL4_eTOL4_b50_e400
+Trainable Hidden Layer Index: 9
+GPU: 1
+
+Optimizing 1 batches of size 50:
+Time per Batch: 2.15
+
+Time per Epoch: 2.37
+
+Training Set: Loss: 2.853e-01, Accuracy: 0.000
+Validation Set: Loss: 0.000e+00, Accuracy: 0.490
+Test Set: Loss: 0.000e+00, Accuracy: 0.451
+
+Previous Layer Relative # of 0s: 0.6588119
+
+================================
+     Extending Architecture     
+================================
+Previous Layer Relative # of 0s: 0.7001980
+
+
+================================
+            Epoch 398            
+================================
+Abalone_FC_L1_mhl15_hl100_rpt0001_nTOL4_eTOL4_b50_e400
+Trainable Hidden Layer Index: 10
+GPU: 1
+
+Optimizing 1 batches of size 50:
+Time per Batch: 2.38
+Time per Epoch: 2.61
+
+Training Set: Loss: 2.862e-01, Accuracy: 0.000
+Validation Set: Loss: 0.000e+00, Accuracy: 0.486
+Test Set: Loss: 0.000e+00, Accuracy: 0.426
+
+Previous Layer Relative # of 0s: 0.7001980
+
+================================
+            Epoch 399            
+================================
+Abalone_FC_L1_mhl15_hl100_rpt0001_nTOL4_eTOL4_b50_e400
+Trainable Hidden Layer Index: 10
+GPU: 1
+
+Optimizing 1 batches of size 50:
+Time per Batch: 2.38
+Time per Epoch: 2.62
+
+Training Set: Loss: 2.866e-01, Accuracy: 0.000
+Validation Set: Loss: 0.000e+00, Accuracy: 0.487
+Test Set: Loss: 0.000e+00, Accuracy: 0.454
+
+Previous Layer Relative # of 0s: 0.7001980
+
+================================
+     Extending Architecture     
+================================
+Previous Layer Relative # of 0s: 0.6321782
+
+================================
+            Epoch 312            
+================================
+Abalone_FC_L1_mhl15_hl100_rpt0001_nTOL4_eTOL4_b50_e400
+Trainable Hidden Layer Index: 11
+GPU: 1
+
+Optimizing 1 batches of size 50:
+Time per Batch: 2.52
+Time per Epoch: 2.79
+
+Training Set: Loss: 2.871e-01, Accuracy: 0.000
+Validation Set: Loss: 0.000e+00, Accuracy: 0.471
+Test Set: Loss: 0.000e+00, Accuracy: 0.422
+
+Previous Layer Relative # of 0s: 0.6321782
+
